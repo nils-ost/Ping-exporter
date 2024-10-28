@@ -31,7 +31,7 @@ def do_ping(host, count=3, timeout=0.5):
             except Exception:
                 print(line)
             continue
-        if line.startswith('rtt'):
+        if line.startswith('rtt') or line.startswith('round-trip'):
             try:
                 splitted = line.split()[3].split('/')
                 rtt_min = float(splitted[0])
